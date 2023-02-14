@@ -6,18 +6,23 @@
   "scripts": {
     "eslint": "eslint",
     "prettier": "prettier",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=dev nodemon main.js",
+    "debug": "NODE_ENV=dev node main.js --inspect",
+    "production": "NODE_ENV=production nodemon main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "pg": "^8.9.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.6.0"
   },
   "devDependencies": {
     "eslint": "^8.34.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.8.4"
   }
 }
