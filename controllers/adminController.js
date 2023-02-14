@@ -1,7 +1,12 @@
+const os = require("os");
+
 const indexController = {
     checkRAM:async function(req, res){
-        console.log("HI2");
-        return res.send("HI2");
+        // let serverState = {
+        //     totalMem:os.totalmem(),
+        //     freeMem:os.freemem()
+        // };
+        return res.json(os.freemem());
     }
 };
 

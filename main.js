@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 const indexRouter = require('./routes/index');
 
 const app = express();
+app.use(express.json());
 app.use('/api', indexRouter);
 
 const start = async () => {
@@ -17,3 +18,8 @@ const start = async () => {
 };
 
 start();
+
+
+//npm run 
+//npx sequelize-cli db:migrate          --migrate
+//npx sequelize-cli db:migrate:undo     --undo migrate
