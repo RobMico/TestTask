@@ -1,12 +1,12 @@
-const os = require("os");
-
+const adminService = require("../services/adminService");
 const indexController = {
     checkRAM:async function(req, res){
         // let serverState = {
         //     totalMem:os.totalmem(),
         //     freeMem:os.freemem()
         // };
-        return res.json(os.freemem());
+        const freeMem = await adminService.getFreeRAM();
+        return res.json(freeMem);
     }
 };
 

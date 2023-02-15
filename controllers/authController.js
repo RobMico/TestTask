@@ -1,5 +1,4 @@
-const cryptor = require("../helpers/cryptor");
-const userRepository = require("../models/user");
+const authService = require("../services/authService");
 
 const indexController = {
     registration: async function (req, res) {
@@ -8,9 +7,7 @@ const indexController = {
             return res.status(400).send('Bad request');
         }
         try {
-            const encryptedPass = await cryptor.encryptPassword(password);
-            console.log(encryptedPass);
-            const user = await userRepository.create({ name: name, password: encryptedPass, email: email });
+            const user = await authService.createUser(name, email, password);
             return res.json(user);
         }
         catch (ex) {
@@ -24,11 +21,7 @@ const indexController = {
             return res.status(400).send('Bad request');
         }
         try {
-            const candidate = await userRepository.findOne({ where: { email: email } });
-            if (!candidate) {
-                return res.status(400).send('Bad request');
-            }
-            const compare = await cryptor.comparePassword(password, candidate.password);
+            const compare = await authService.checkUserPassword(email, password);
             return res.json(compare);
         }
         catch (ex) {
