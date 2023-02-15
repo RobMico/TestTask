@@ -19,7 +19,6 @@ const start = async () => {
 
 start();
 
-
-//npm run 
 //npx sequelize-cli db:migrate          --migrate
 //npx sequelize-cli db:migrate:undo     --undo migrate
+//docker exec testtask_server_1 /bin/bash -c "NODE_ENV=production npx sequelize-cli db:migrate"         --docker migration

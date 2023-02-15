@@ -1,5 +1,5 @@
 
-process.env.NODE_ENV = 'dev';
+//process.env.NODE_ENV = 'dev';
 require('dotenv').config({ path: '.' + process.env.NODE_ENV + '.env' });
 module.exports = {
   "dev": {
