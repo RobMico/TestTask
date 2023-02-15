@@ -19,6 +19,8 @@ const start = async () => {
 
 start();
 
+//recreate db - remove volume(./data folder)
+//docker-compose up --build
 //npx eslint <file>
 //prettier --write <file>
 //npx sequelize-cli db:migrate          --migrate
