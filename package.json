@@ -7,7 +7,7 @@
     "eslint": "eslint",
     "prettier": "prettier",
     "dev": "NODE_ENV=dev nodemon main.ts",
-    "debug": "NODE_ENV=dev ts-node main.ts --watch",
+    "debug": "NODE_ENV=dev ts-node main.ts --inspect -r",
     "production": "NODE_ENV=production ts-node main.ts"
   },
   "author": "",
